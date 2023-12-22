@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+	<title>ИДЗ №1 | Контроллер лифта</title>
+</head>
+
+<body>
+
+	<div class="container mw-100 " style="min-height: 100vh; display: flex; justify-content: center; align-items: center; background: #2D3047">
+		<div class="row p-5 shadow-lg p-3 mb-5 rounded border border-3" style="background: #a55d3d" >
+
+			<div class="col p-3 rounded d-flex flex-column align-items-center" style="width: 80rem; background: #2D3047">
+				<div class="h3" style="color: white">Эмулятор лифта</div>
+				<div class="card mb-3" style="width: 100%; border: none">
+					<div class="card-body" style="background: #253031">
+						<label for="name_input" class="form-label" style="color: white">Имя</label>
+						<input id="name_input" class="form-control" value="Арсений" style="color: white">
+						<br>
+						<label for="time_input" class="form-label" style="color: white">Замедление эмулятора (по умолчанию - 1.0)</label>
+						<input id="time_input" class="form-control" value="1.0">
+						<br>
+						<label class="form-label" style="color: white">Этажи</label>
+						<input id="floors_input" class="form-control" value="5">
+						<br>
+						<label class="form-label" style="display: none">API</label>
+						<input id="host_input" class="form-control" value="https://lstu.fusionsoft.ru/srv-elevator" style="display: none">
+						<br>
+						<button onclick="start_elevator()" class="btn btn-success">Запустить</button>
+					</div>
+				</div>
+				<div class="card" style="width: 100%; background: #253031">
+					<div class="card-body" >
+						<p id="state_label" class="h6" style="color: white">Состояние</p>
+						<p id="floors_queue" class="h6" style="color: white">Очередь: </p>
+						<p id="weight_label" class="h6" style="color: white">Вес</p>
+						<button id="enter_button" onclick="enter_passenger()" class="btn btn-primary" disabled>Войти</button>
+						<button id="exit_button" onclick="exit_passenger()" class="btn border border-danger btn-pink-500" disabled style="color: white">Выйти</button>
+					</div>
+				</div>
+				<div class="h5 " style="color: white">Вызвать на:</div>
+				<div id="buttons_list" style="display: flex; background: #253031" class="btn btn-secondary p-3" >
+
+				</div>
+			</div>
+			<div class="col">
+
+			</div>
+			<div class="col w-auto">
+				<div class="p-3 rounded" style="display: flex; background: #A2AEBB">
+
+					<div style=" color: white ">
+						<canvas id="main_canvas" width="100%" height="400"
+							style="border:1px solid #3d3d3d; margin-left: 10px; border-radius:20px"></canvas>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+		crossorigin="anonymous"></script>
+	<script src="index.js"></script>
+</body>
+
+</html>
